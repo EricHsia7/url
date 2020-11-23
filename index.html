@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<title>⋯</title>
+<script>
+
+var getUrlString = location.href;
+var url = new URL(getUrlString);
+
+var og = document.referrer;
+
+var urls = url.searchParams.get("urls");
+var g = url.searchParams.get("g");
+
+if (g === "1") {
+    location.replace(urls);
+} else {
+    location.replace("?source=" + og + "&g=1&urls=" + urls) ;
+}
+
+</script>
