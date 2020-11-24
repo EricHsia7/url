@@ -22,7 +22,7 @@ var urls = url.searchParams.get("urls");
 var g = url.searchParams.get("g");
 function gp() {
 if (g === "1") {
-    location.replace(urls);
+    location.replace(urls + '?source=' + url.searchParams.get("source"));
 } else {
     location.replace("?source=" + og + "&g=1&urls=" + urls) ;
 }
