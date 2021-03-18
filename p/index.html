@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>🔗</title>
+<style>
+
+.loadb {
+height: 58px;
+	width: 58px;
+position: absolute;
+display: flex;
+  justify-content: center;
+  align-items: center;
+
+top:50%;
+left:50%;
+
+transform: translate(-50%,-50%);
+}
+.load {
+border: 4px solid #f5f5f5;
+	border-right: 4px solid #333;
+	border-bottom: 4px solid #333;
+	border-left: 4px solid #333;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+-webkit-animation: loading 0.9s infinite linear;
+
+position:absolute;
+top:0px;
+left:0px;
+
+display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.loadradius {
+width:4px;
+height:58px;
+background:rgba(0, 0, 0, 0);
+position:absolute;
+top:50%;
+left:50%;
+-webkit-animation: loadingd 0.9s infinite linear;
+}
+.rradius {
+width:4px;
+height:4px;
+border-radius:50%;
+position:absolute;
+background:#333;
+top:0px;
+left:0px;
+}
+
+
+
+
+.loadradiusf {
+width:4px;
+height:58px;
+background:rgba(0, 0, 0, 0);
+position:absolute;
+top:50%;
+left:50%;
+-webkit-animation: loadingdf 0.9s infinite linear;
+}
+.rradiusf {
+width:4px;
+height:4px;
+border-radius:50%;
+position:absolute;
+background:#333;
+top:0px;
+left:0px;
+}
+
+@-webkit-keyframes loading {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes loadingd {
+	from {
+		-webkit-transform: translate(-50%,-50%)  rotate(45deg);
+	}
+	to {
+		-webkit-transform: translate(-50%,-50%)  rotate(405deg);
+	}
+}
+
+@-webkit-keyframes loadingdf {
+	from {
+		-webkit-transform: translate(-50%,-50%)  rotate(-45deg);
+	}
+	to {
+		-webkit-transform: translate(-50%,-50%)  rotate(315deg);
+	}
+}
+
+</style>
+<div class="loadb">
+<div class="load">
+</div>
+
+<div class="loadradius">
+<div class="rradius"></div>
+</div>
+
+<div class="loadradiusf">
+<div class="rradiusf"></div>
+</div>
+
+</div>
