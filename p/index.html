@@ -147,9 +147,11 @@ color:#333;
 <br>
 <input class="pw" type="password" placeholder="密碼" id="pwd">
 </span>
+	
+</div>
+<div class="fft" id="fftt">
 	<div id="output"></div>
 </div>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aes-js/3.1.2/index.min.js"></script>
         <script src="https://erichsia7.github.io/prompt.js/prompt.min.js"></script>
         <script>
@@ -196,6 +198,8 @@ var url = new URL(getUrlString);
                 console.log(decryptedTexte);
 		    var today=new Date();
                 document.querySelector('#output').innerHTML = decryptedTexte ;
+			$('#fft').fadeOut(1);
+			$('#fftt').delay(1200).fadeIn(1);
             }
 		
 		
