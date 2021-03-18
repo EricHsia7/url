@@ -101,23 +101,52 @@ left:0px;
 		-webkit-transform: translate(-50%,-50%)  rotate(315deg);
 	}
 }
+* {-webkit-appearance:none;outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); font-family: 'Noto Sans TC', sans-serif;}
+.ce {position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);}
+#txt {
+color:#212121;
+}
 
+.pw {
+width:250px;
+height:35px;
+background:rgba(0, 0, 0, 0);
+font-size:20px;
+border-radius:8px;
+border:1px #333 solid;
+color:#333;
+}
+	.fft {
+		width:100%;
+		height:100%;
+		background:#fff;
+		psition:fixed;
+		top:0px;
+		left:0px;
+		display:none;
+	}
 </style>
 <div class="loadb">
 <div class="load">
 </div>
-
 <div class="loadradius">
 <div class="rradius"></div>
 </div>
-
 <div class="loadradiusf">
 <div class="rradiusf"></div>
 </div>
-
 </div>
 
-
+<div class="fft" id="fft">
+<span class="ce">
+<span id="txt" style="margin-bottom:10px;">
+<center>請輸入密碼。</center>
+</span>
+<br>
+<input class="pw" type="password" placeholder="密碼" id="pwd">
+</span>
+	<div id="output"></div>
+</div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aes-js/3.1.2/index.min.js"></script>
         <script src="https://erichsia7.github.io/prompt.js/prompt.min.js"></script>
@@ -170,6 +199,12 @@ var url = new URL(getUrlString);
 		
 		
             if(bbb() === 'ture') {
-		    alert('true!');
+		    $('#fft').delay(1200).fadeIn(1);
 	    }
+		
+		$(document).keyup(function (e) {
+    if ($("#pwd").is(":focus") && (e.keyCode == 13)) {
+       ooo();
+    }
+});
         </script>
