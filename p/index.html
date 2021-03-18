@@ -1,4 +1,5 @@
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>🔗</title>
 <style>
 
@@ -115,3 +116,93 @@ left:0px;
 </div>
 
 </div>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aes-js/3.1.2/index.min.js"></script>
+        <script src="https://erichsia7.github.io/prompt.js/prompt.min.js"></script>
+        <script>
+            function aaa() {
+                var ivq = parseInt(
+                    Math.floor(Math.random() * 8 + 1) +
+                        "" +
+                        Math.floor(Math.random() * 8 + 1) +
+                        "" +
+                        Math.floor(Math.random() * 8 + 1) +
+                        "" +
+                        Math.floor(Math.random() * 8 + 1) +
+                        "" +
+                        Math.floor(Math.random() * 8 + 1) +
+                        "" +
+                        Math.floor(Math.random() * 8 + 1)
+                );
+                document.querySelector("#kkk").value = ivq;
+                var key = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+                var text = document.querySelector("#text").value;
+                var textBytes = aesjs.utils.utf8.toBytes(text);
+
+                var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(ivq));
+                var encryptedBytes = aesCtr.encrypt(textBytes);
+
+                var encryptedHex = aesjs.utils.hex.fromBytes(encryptedBytes);
+                console.log(encryptedHex);
+                document.querySelector("#kk").value = encryptedHex;
+                $("#enc2").delay(333).fadeIn(333);
+                
+            }
+
+           
+            function bbb() {
+                var keye = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+                var gbu = document.querySelector("#texte").value;
+                var kiu = document.querySelector("#kkke").value;
+                var encryptedBytese = aesjs.utils.hex.toBytes(gbu);
+
+                // The counter mode of operation maintains internal state, so to
+                // decrypt a new instance must be instantiated.
+                var aesCtre = new aesjs.ModeOfOperation.ctr(keye, new aesjs.Counter(parseInt(kiu)));
+                var decryptedBytese = aesCtre.decrypt(encryptedBytese);
+
+                // Convert our bytes back into text
+                var decryptedTexte = aesjs.utils.utf8.fromBytes(decryptedBytese);
+                console.log(decryptedTexte);
+                document.querySelector("#kkel").value = decryptedTexte;
+                $("#dec2").delay(333).fadeIn(333);
+                
+            }
+
+            function fin() {
+                $("#enc2,#dec2").delay(333).fadeOut(333);
+                document.querySelector("#texte").value = '' ;
+                document.querySelector("#kkke").value = '' ;
+                document.querySelector("#text").value = '' ;
+            }
+           function copy(cooid,typ) {
+var copys = document.getElementById(cooid);
+copys.select();
+document.execCommand("Copy");
+               $('body').prompt({'message':'已複製' + typ,'time':1000,'animate':'slide'});
+}
+            
+            
+            
+            function en() {
+            $(".allpage").css({'left':'0%'});
+  $('#hico').attr('src','lock_1.png');
+  $('#bico').attr('src','unlock.png');
+  $('#mico').attr('src','more.png');
+}
+  
+  function de() {
+  $(".allpage").css({'left':'-100%'});
+  $('#hico').attr('src','lock.png');
+  $('#bico').attr('src','unlock_1.png');
+  $('#mico').attr('src','more.png');
+}
+  function more() {
+  $(".allpage").css({'left':'-200%'});
+  $('#hico').attr('src','lock.png');
+  $('#bico').attr('src','unlock.png');
+  $('#mico').attr('src','more_1.png');
+}
+        </script>
