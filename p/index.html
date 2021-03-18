@@ -147,7 +147,29 @@ var url = new URL(getUrlString);
 		}
             }
 
+		
+		
+		function ooo() {
+                var keye = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+                var gbu = url.searchParams.get("key");
+                var kiu = document.querySelector('#pwd').value ;
+                var encryptedBytese = aesjs.utils.hex.toBytes(gbu);
+
+                // The counter mode of operation maintains internal state, so to
+                // decrypt a new instance must be instantiated.
+                var aesCtre = new aesjs.ModeOfOperation.ctr(keye, new aesjs.Counter(parseInt(kiu)));
+                var decryptedBytese = aesCtre.decrypt(encryptedBytese);
+
+                // Convert our bytes back into text
+                var decryptedTexte = aesjs.utils.utf8.fromBytes(decryptedBytese);
+                console.log(decryptedTexte);
+		    var today=new Date();
+                document.querySelector('#output').innerHTML = decryptedTexte ;
+            }
+		
+		
+		
             if(bbb() === 'ture') {
-		    alert('date true!');
+		    alert('true!');
 	    }
         </script>
