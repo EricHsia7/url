@@ -1,6 +1,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>🔗</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <style>
 
 .loadb {
@@ -200,9 +201,10 @@ var url = new URL(getUrlString);
 		
             if(bbb() === 'ture') {
 		    $('#fft').delay(1200).fadeIn(1);
+
 	    }
 		
-		$(document).keyup(function (e) {
+				    $(document).keyup(function (e) {
     if ($("#pwd").is(":focus") && (e.keyCode == 13)) {
        ooo();
     }
